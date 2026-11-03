@@ -19,11 +19,11 @@ public class ATMSystem {
         String cvv = scanner.nextLine();
         System.out.println("=============================");
 
-        if (card.equals(cardCorrect) && cvv.equals(cvvCorrect)) {
+        if(card.equals(cardCorrect) && cvv.equals(cvvCorrect)) {
 
             int optiune = -1;
 
-            while (optiune != 0) {
+            while(optiune != 0) {
 
                 System.out.println();
                 System.out.println("----- MENIU ----");
@@ -37,12 +37,23 @@ public class ATMSystem {
                 optiune = scanner.nextInt();
                 System.out.println("--------------------------");
 
+                switch (optiune) {
+                    case 1:
+                        System.out.println("Numele, Prenumele : " + nume);
+                        System.out.println("Balanța : " + sold);
+                        System.out.println("Credit : " + credit);
+                        System.out.println("Nr. de Telefon : " + telefon);
+                        break;
+
+
+                }
+
 
             }
-
-        } else {
+        }else{
             System.out.println("Nr. Card sau CVV greșit!");
 
         }
+
     }
 }
