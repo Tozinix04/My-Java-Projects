@@ -44,8 +44,12 @@ public class ATMSystem {
                         System.out.println("Credit : " + credit);
                         System.out.println("Nr. de Telefon : " + telefon);
                         break;
-
-
+                    case 2:
+                        System.out.printf("Suma de depozitare : ");
+                        double depozitare = scanner.nextDouble();
+                        sold += depozitare;
+                        System.out.println("Balanță nouă : " + sold);
+                        break;
                 }
 
 
