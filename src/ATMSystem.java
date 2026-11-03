@@ -5,12 +5,12 @@ public class ATMSystem {
 
         Scanner scanner = new Scanner(System.in);
 
-        String cardCorrect = "1234";
+        String cardCorrect = "1234567890";
         String cvvCorrect = "333";
-        String nume = "Carauș Cristian";
+        String nume = "Cristian Cristian";
         String telefon = "+373 69 456 546";
         double sold = 1000.0;
-        double credit = 500.0;
+        double credit = 50000.0;
 
         System.out.println("=============================");
         System.out.printf("Întroduce numărul cardului : ");
@@ -43,12 +43,14 @@ public class ATMSystem {
                         System.out.println("Balanța : " + sold);
                         System.out.println("Credit : " + credit);
                         System.out.println("Nr. de Telefon : " + telefon);
+                        System.out.println("--------------------------");
                         break;
                     case 2:
                         System.out.printf("Suma de depozitare : ");
                         double depozitare = scanner.nextDouble();
                         sold += depozitare;
                         System.out.println("Balanță nouă : " + sold);
+                        System.out.println("--------------------------");
                         break;
                     case 3:
                         System.out.printf("Suma de extras : ");
@@ -59,6 +61,7 @@ public class ATMSystem {
                         }else{
                             System.out.println("Nu ai destui bani!");
                         }
+                        System.out.println("--------------------------");
                         break;
                     case 4:
                         System.out.println("Suma creditului : " + credit);
@@ -72,6 +75,7 @@ public class ATMSystem {
                         } else {
                             System.out.println("Suma nu este valida!");
                         }
+                        System.out.println("--------------------------");
                         break;
                     case 0:
                         System.out.println("La revedere! (Sistemul se închide...)");
@@ -83,6 +87,7 @@ public class ATMSystem {
             }
         }else{
             System.out.println("Nr. Card sau CVV greșit!");
+            System.out.println("=============================");
 
         }
 
