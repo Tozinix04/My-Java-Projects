@@ -73,9 +73,13 @@ public class ATMSystem {
                             System.out.println("Suma nu este valida!");
                         }
                         break;
+                    case 0:
+                        System.out.println("La revedere! (Sistemul se închide...)");
+                        break;
+
+                    default:
+                        System.out.println("Optiune greșită!");
                 }
-
-
             }
         }else{
             System.out.println("Nr. Card sau CVV greșit!");
