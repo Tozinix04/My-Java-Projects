@@ -50,6 +50,16 @@ public class ATMSystem {
                         sold += depozitare;
                         System.out.println("Balanță nouă : " + sold);
                         break;
+                    case 3:
+                        System.out.printf("Suma de extras : ");
+                        double extras = scanner.nextDouble();
+                        if(extras <= sold) {
+                            sold -= extras;
+                            System.out.println("Balanță nouă : " + sold);
+                        }else{
+                            System.out.println("Nu ai destui bani!");
+                        }
+                        break;
                 }
 
 
