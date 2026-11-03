@@ -60,6 +60,19 @@ public class ATMSystem {
                             System.out.println("Nu ai destui bani!");
                         }
                         break;
+                    case 4:
+                        System.out.println("Suma creditului : " + credit);
+                        System.out.printf("Suma de achitat : ");
+                        double achitat = scanner.nextDouble();
+
+                        if (achitat <= sold && achitat <= credit) {
+                            sold = sold - achitat;
+                            credit = credit - achitat;
+                            System.out.println("Credit ramas : " + credit);
+                        } else {
+                            System.out.println("Suma nu este valida!");
+                        }
+                        break;
                 }
 
 
