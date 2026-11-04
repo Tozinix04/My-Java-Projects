@@ -37,6 +37,38 @@ public class currencyExchange {
         int option = input.nextInt();
         System.out.println("--------------------------");
 
+        switch (option) {
+            case 1: // USD
+                System.out.printf("Enter USD amount: ");
+                double usd = input.nextDouble();
+                System.out.println("--------------------------");
+                System.out.println("What currency you need? : ");
+                System.out.println("1 - EURO , 2 - RON , 3 - MDL");
+                System.out.printf("Currency : ");
+                int option2 = input.nextInt();
 
+                if(option2 == 1){
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (USD to EURO)");
+                    convert = usd * usdToEuro;
+                    System.out.println("Converted " + usd + " USD" + " to " + convert + " EURO");
+                    System.out.println("--------------------------");
+                }else if(option2 == 2){
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (USD to RON)");
+                    convert = usd * usdToRon;
+                    convert = Math.floor(convert * 100) / 100;
+                    System.out.println("Converted " + usd + " USD" + " to " + convert + " RON");
+                    System.out.println("--------------------------");
+                }else if(option2 == 3){
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (USD to MDL)");
+                    convert = usd * usdValueBuy;
+                    convert = Math.floor(convert * 100) / 100;
+                    System.out.println("Converted " + usd + " USD" + " to " + convert + " MDL");
+                    System.out.println("--------------------------");
+                }
+
+        }
     }
 }
