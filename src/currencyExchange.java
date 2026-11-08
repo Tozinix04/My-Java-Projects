@@ -98,7 +98,36 @@ public class currencyExchange {
                         convert = Math.floor(convert * 100) / 100;
                         System.out.println("Converted " + euro + " EURO" + " to " + convert + " MDL");
                         System.out.println("--------------------------");
-                    }
+                    }case 3:
+                System.out.printf("Enter RON amount: ");
+                double ron = input.nextDouble();
+                System.out.println("--------------------------");
+                System.out.println("What currency you need? : ");
+                System.out.println("1 - EURO , 2 - USD , 3 - MDL");
+                System.out.printf("Currency : ");
+                int option4 = input.nextInt();
+
+                if(option4 == 1){
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (RON to EURO)");
+                    convert = ron * ronToEuro;
+                    System.out.println("Converted " + ron + " RON" + " to " + convert + " EURO");
+                    System.out.println("--------------------------");
+                }else if(option4 == 2){
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (RON to USD)");
+                    convert = ron * ronToUsd;
+                    convert = Math.floor(convert * 100) / 100;
+                    System.out.println("Converted " + ron + " RON" + " to " + convert + " USD");
+                    System.out.println("--------------------------");
+                }else if(option4 == 3){
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (RON to MDL)");
+                    convert = ron * ronValueBuy;
+                    convert = Math.floor(convert * 100) / 100;
+                    System.out.println("Converted " + ron + " RON" + " to " + convert + " MDL");
+                    System.out.println("--------------------------");
+                }
 
         }
     }
