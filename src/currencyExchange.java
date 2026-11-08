@@ -68,6 +68,37 @@ public class currencyExchange {
                     System.out.println("Converted " + usd + " USD" + " to " + convert + " MDL");
                     System.out.println("--------------------------");
                 }
+                case 2: //EURO
+                    System.out.printf("Enter EURO amount: ");
+                    double euro  = input.nextDouble();
+                    System.out.println("--------------------------");
+                    System.out.println("What currency you need? : ");
+                    System.out.println("1 - USD , 2 - RON , 3 - MDL");
+                    System.out.printf("Currency : ");
+                    int option3 = input.nextInt();
+
+                    if(option3 == 1){
+                        System.out.println("--------------------------");
+                        System.out.println("Converting (EURO to USD)");
+                        convert = euro * euroToUsd;
+                        convert = Math.floor(convert * 100) / 100;
+                        System.out.println("Converted " + euro + " EURO" + " to " + convert + " USD");
+                        System.out.println("--------------------------");
+                    }else if(option3 == 2){
+                        System.out.println("--------------------------");
+                        System.out.println("Converting (EURO to RON)");
+                        convert = euro * euroToRon;
+                        convert = Math.floor(convert * 100) / 100;
+                        System.out.println("Converted " + euro + " EURO" + " to " + convert + " RON");
+                        System.out.println("--------------------------");
+                    }else if(option3 == 3){
+                        System.out.println("--------------------------");
+                        System.out.println("Converting (EURO to MDL)");
+                        convert = euro * euroValueBuy;
+                        convert = Math.floor(convert * 100) / 100;
+                        System.out.println("Converted " + euro + " EURO" + " to " + convert + " MDL");
+                        System.out.println("--------------------------");
+                    }
 
         }
     }
