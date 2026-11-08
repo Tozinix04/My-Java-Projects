@@ -47,20 +47,20 @@ public class currencyExchange {
                 System.out.printf("Currency : ");
                 int option2 = input.nextInt();
 
-                if(option2 == 1){
+                if (option2 == 1) {
                     System.out.println("--------------------------");
                     System.out.println("Converting (USD to EURO)");
                     convert = usd * usdToEuro;
                     System.out.println("Converted " + usd + " USD" + " to " + convert + " EURO");
                     System.out.println("--------------------------");
-                }else if(option2 == 2){
+                } else if (option2 == 2) {
                     System.out.println("--------------------------");
                     System.out.println("Converting (USD to RON)");
                     convert = usd * usdToRon;
                     convert = Math.floor(convert * 100) / 100;
                     System.out.println("Converted " + usd + " USD" + " to " + convert + " RON");
                     System.out.println("--------------------------");
-                }else if(option2 == 3){
+                } else if (option2 == 3) {
                     System.out.println("--------------------------");
                     System.out.println("Converting (USD to MDL)");
                     convert = usd * usdValueBuy;
@@ -68,37 +68,38 @@ public class currencyExchange {
                     System.out.println("Converted " + usd + " USD" + " to " + convert + " MDL");
                     System.out.println("--------------------------");
                 }
-                case 2: //EURO
-                    System.out.printf("Enter EURO amount: ");
-                    double euro  = input.nextDouble();
-                    System.out.println("--------------------------");
-                    System.out.println("What currency you need? : ");
-                    System.out.println("1 - USD , 2 - RON , 3 - MDL");
-                    System.out.printf("Currency : ");
-                    int option3 = input.nextInt();
+            case 2: //EURO
+                System.out.printf("Enter EURO amount: ");
+                double euro = input.nextDouble();
+                System.out.println("--------------------------");
+                System.out.println("What currency you need? : ");
+                System.out.println("1 - USD , 2 - RON , 3 - MDL");
+                System.out.printf("Currency : ");
+                int option3 = input.nextInt();
 
-                    if(option3 == 1){
-                        System.out.println("--------------------------");
-                        System.out.println("Converting (EURO to USD)");
-                        convert = euro * euroToUsd;
-                        convert = Math.floor(convert * 100) / 100;
-                        System.out.println("Converted " + euro + " EURO" + " to " + convert + " USD");
-                        System.out.println("--------------------------");
-                    }else if(option3 == 2){
-                        System.out.println("--------------------------");
-                        System.out.println("Converting (EURO to RON)");
-                        convert = euro * euroToRon;
-                        convert = Math.floor(convert * 100) / 100;
-                        System.out.println("Converted " + euro + " EURO" + " to " + convert + " RON");
-                        System.out.println("--------------------------");
-                    }else if(option3 == 3){
-                        System.out.println("--------------------------");
-                        System.out.println("Converting (EURO to MDL)");
-                        convert = euro * euroValueBuy;
-                        convert = Math.floor(convert * 100) / 100;
-                        System.out.println("Converted " + euro + " EURO" + " to " + convert + " MDL");
-                        System.out.println("--------------------------");
-                    }case 3:
+                if (option3 == 1) {
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (EURO to USD)");
+                    convert = euro * euroToUsd;
+                    convert = Math.floor(convert * 100) / 100;
+                    System.out.println("Converted " + euro + " EURO" + " to " + convert + " USD");
+                    System.out.println("--------------------------");
+                } else if (option3 == 2) {
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (EURO to RON)");
+                    convert = euro * euroToRon;
+                    convert = Math.floor(convert * 100) / 100;
+                    System.out.println("Converted " + euro + " EURO" + " to " + convert + " RON");
+                    System.out.println("--------------------------");
+                } else if (option3 == 3) {
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (EURO to MDL)");
+                    convert = euro * euroValueBuy;
+                    convert = Math.floor(convert * 100) / 100;
+                    System.out.println("Converted " + euro + " EURO" + " to " + convert + " MDL");
+                    System.out.println("--------------------------");
+                }
+            case 3:
                 System.out.printf("Enter RON amount: ");
                 double ron = input.nextDouble();
                 System.out.println("--------------------------");
@@ -107,20 +108,20 @@ public class currencyExchange {
                 System.out.printf("Currency : ");
                 int option4 = input.nextInt();
 
-                if(option4 == 1){
+                if (option4 == 1) {
                     System.out.println("--------------------------");
                     System.out.println("Converting (RON to EURO)");
                     convert = ron * ronToEuro;
                     System.out.println("Converted " + ron + " RON" + " to " + convert + " EURO");
                     System.out.println("--------------------------");
-                }else if(option4 == 2){
+                } else if (option4 == 2) {
                     System.out.println("--------------------------");
                     System.out.println("Converting (RON to USD)");
                     convert = ron * ronToUsd;
                     convert = Math.floor(convert * 100) / 100;
                     System.out.println("Converted " + ron + " RON" + " to " + convert + " USD");
                     System.out.println("--------------------------");
-                }else if(option4 == 3){
+                } else if (option4 == 3) {
                     System.out.println("--------------------------");
                     System.out.println("Converting (RON to MDL)");
                     convert = ron * ronValueBuy;
@@ -128,7 +129,38 @@ public class currencyExchange {
                     System.out.println("Converted " + ron + " RON" + " to " + convert + " MDL");
                     System.out.println("--------------------------");
                 }
+            case 4:
+                System.out.printf("Enter MDL amount: ");
+                double mdl = input.nextDouble();
+                System.out.println("--------------------------");
+                System.out.println("What currency you need? : ");
+                System.out.println("1 - EURO , 2 - USD , 3 - RON");
+                System.out.printf("Currency : ");
+                int option5 = input.nextInt();
 
+                if (option5 == 1) {
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (MDL to EURO)");
+                    convert = mdl / euroValueSell;
+                    System.out.println("Converted " + mdl + " MDL" + " to " + convert + " EURO");
+                    System.out.println("--------------------------");
+                } else if (option5 == 2) {
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (MDL to USD)");
+                    convert = mdl / usdValueSell;
+                    convert = Math.floor(convert * 100) / 100;
+                    System.out.println("Converted " + mdl + " MDL" + " to " + convert + " USD");
+                    System.out.println("--------------------------");
+                } else if (option5 == 3) {
+                    System.out.println("--------------------------");
+                    System.out.println("Converting (MDL to RON)");
+                    convert = mdl / ronValueSell;
+                    convert = Math.floor(convert * 100) / 100;
+                    System.out.println("Converted " + mdl + " MDL" + " to " + convert + " MDL");
+                    System.out.println("--------------------------");
+                }
         }
+        System.out.println("Valută non-existentă!");
     }
 }
+
