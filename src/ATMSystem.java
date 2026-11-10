@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.FileWriter;
@@ -6,6 +7,35 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ATMSystem {
+
+    static void creeazaChitanta(String tipOperatiune, LocalDateTime dataOperatiune,
+                                        String nume, String card, double suma) {
+
+        LocalDateTime dataChitanta = LocalDateTime.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+        String cardAscuns = card.substring(0, 4) + " **** " + card.substring(card.length() - 4);
+
+        String numeFisier = "chitanta_" + dataChitanta.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".txt";
+
+        try (PrintWriter writer = new PrintWriter(new FileWriter(numeFisier))) {
+            writer.println("=============================");
+            writer.println("        CHITANȚĂ ATM");
+            writer.println("=============================");
+            writer.println("Data și ora operației : " + dataOperatiune.format(format));
+            writer.println("Data și ora chitanței : " + dataChitanta.format(format));
+            writer.println("Nume, Prenume         : " + nume);
+            writer.println("Card                  : " + cardAscuns);
+            writer.println("Tip operațiune        : " + tipOperatiune);
+            writer.println("Suma                  : " + suma);
+            writer.println("=============================");
+
+            System.out.println("Chitanța a fost creată : " + numeFisier);
+        } catch (IOException e) {
+            System.out.println("Eroare la crearea chitanței : " + e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -53,6 +83,7 @@ public class ATMSystem {
                     case 2:
                         System.out.printf("Suma de depozitare : ");
                         double depozitare = scanner.nextDouble();
+                        LocalDateTime dataDepozitare = LocalDateTime.now();
                         sold += depozitare;
                         System.out.println("Balanță nouă : " + sold);
                         System.out.println("--------------------------");
@@ -61,6 +92,7 @@ public class ATMSystem {
                         System.out.printf("Suma de extras : ");
                         double extras = scanner.nextDouble();
                         if(extras <= sold) {
+                            LocalDateTime dataExtragere = LocalDateTime.now();
                             sold -= extras;
                             System.out.println("Balanță nouă : " + sold);
                         }else{
