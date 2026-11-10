@@ -1,10 +1,10 @@
 =============================
         CHITANȚĂ ATM
 =============================
-Data și ora operației : 10/11/2026 22:40:56
-Data și ora chitanței : 10/11/2026 22:40:58
+Data și ora operației : 10/11/2026 22:48:26
+Data și ora chitanței : 10/11/2026 22:49:07
 Nume, Prenume         : Cristian Cristian
 Card                  : 1234 **** 7890
 Tip operațiune        : Extragere
-Suma                  : 2435.55
+Suma                  : 2500.0
 =============================

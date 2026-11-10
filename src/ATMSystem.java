@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 public class ATMSystem {
 
     static void creeazaChitanta(String tipOperatiune, LocalDateTime dataOperatiune,
-                                        String nume, String card, double suma) {
+                                String nume, String card, double suma) {
 
         LocalDateTime dataChitanta = LocalDateTime.now();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
@@ -87,6 +87,11 @@ public class ATMSystem {
                         sold += depozitare;
                         System.out.println("Balanță nouă : " + sold);
                         System.out.println("--------------------------");
+                        System.out.println("Doriți chitanță? (da/nu) : ");
+                        String raspunsDepozit = scanner.next();
+                        if(raspunsDepozit.equalsIgnoreCase("da")){
+                            creeazaChitanta("Depozit", dataDepozitare, nume, card, depozitare);
+                        }
                         break;
                     case 3:
                         System.out.printf("Suma de extras : ");
@@ -95,6 +100,13 @@ public class ATMSystem {
                             LocalDateTime dataExtragere = LocalDateTime.now();
                             sold -= extras;
                             System.out.println("Balanță nouă : " + sold);
+
+                            System.out.printf("Doriți chitanță? (da/nu) : ");
+                            String raspunsExtragere = scanner.next();
+                            if(raspunsExtragere.equalsIgnoreCase("da")){
+                                System.out.println("--------------------------");
+                                creeazaChitanta("Extragere", dataExtragere, nume, card, extras);
+                            }
                         }else{
                             System.out.println("Nu ai destui bani!");
                         }
